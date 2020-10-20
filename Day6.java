@@ -1,30 +1,32 @@
 import java.util.*;
 
 class Solution{
+    static void check(int[] arr){
+        
+        int i=0;
+            int j=arr.length -1;
+        while( i <j){
+                int temp = arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+                i++;
+                j--;
+            }
 
-    static void check(String str){
-        String str1="";
+            for( int k =0;k<arr.length;k++)
+                System.out.print(arr[k]+" ");
 
-        for( int i=0;i<str.length();i++)
-        {
-            if( i % 2 == 0)
-                System.out.print(str.charAt(i));
-            else
-                str1 += str.charAt(i);
-            
         }
-        System.out.print(" "+str1);
-        System.out.println();
-    }
-    public static void main(String[] e){
 
+    public static void main(String[] e){
         Scanner sc = new Scanner(System.in);
         int size = sc.nextInt();
 
-        for( int i=0;i<size;i++){
-            String str = sc.next();
+        int[] arr = new int[size];
+        for(int i=0;i<size;i++)
+            arr[i]=sc.nextInt();
 
-            check(str);
-        }
+            check( arr);
+
     }
 }
